@@ -1,0 +1,4 @@
+# ignore dir plugged
+.vim/plugged
+
+.vim/autoload
