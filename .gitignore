@@ -2,3 +2,7 @@
 .vim/plugged
 
 .vim/autoload
+
+.config/nvim/.git
+
+.config/nvim/.github
