@@ -1,8 +1,11 @@
+# git ignore file
+
 # ignore dir plugged
 .vim/plugged
 
-.vim/autoload
+# ignore dir autoload
+#.vim/autoload
 
-.config/nvim/.git
+# ignore 
+.config/nvim/.*
 
-.config/nvim/.github
