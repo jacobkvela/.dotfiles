@@ -6,6 +6,12 @@ alias cat="batcat"
 # bat - a cat(1) clone with syntax highlighting and git intergration
 alias bat="batcat"
 
+# cd popd
+alias ..="cd .."
+
+# cd popdd
+alias ...="cd ../.."
+
 #disk usage sort in reverse order
 #alias duu="du -ah . | sort -hr | head -n 10"
 
@@ -26,3 +32,6 @@ alias mv="mv -i"
 
 #prompt before removal
 alias rm="rm -i"
+
+# update packages
+alias update="sudo pacman -Syu"

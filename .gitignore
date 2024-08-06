@@ -6,6 +6,13 @@
 # ignore dir autoload
 #.vim/autoload
 
-# ignore 
+# ignore nvim files
 .config/nvim/.*
+.config/nvim/L*
+.config/nvim/R*
+.config/nvim/d*
+.config/nvim/lazy*
+.config/nvim/lua/*
 
+# ignore newsboat
+.newsboat/
