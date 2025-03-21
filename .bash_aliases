@@ -12,9 +12,6 @@ alias ..="cd .."
 # cd popdd
 alias ...="cd ../.."
 
-#disk usage sort in reverse order
-#alias duu="du -ah . | sort -hr | head -n 10"
-
 #prompt before copy
 alias cp="cp -i"
 
