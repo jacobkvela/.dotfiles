@@ -3,9 +3,6 @@
 # bat - a cat(1) clone with syntax highlighting and git intergration
 alias cat="batcat"
 
-#disk usage sort in reverse order
-alias duu="du -CB . | sort -hr | head -n 10"
-
 # cd popd
 alias ..="cd .."
 
@@ -16,7 +13,7 @@ alias ...="cd ../.."
 alias cp="cp -i"
 
 # du-dust disk usage information
-#alias du="dust"
+alias duu="dust"
 
 # fzf man pages for commands
 alias fman="compgen -c | fzf | xargs man"
@@ -26,9 +23,6 @@ alias gitpush="git push --set-upstream origin main"
 
 # prompt before move
 alias mv="mv -i"
-
-# newsboat
-alias rss="newsboat"
 
 # prompt before removal
 alias rm="rm -i"
@@ -50,6 +44,3 @@ alias uninstall="sudo pacman -Rns"
 
 # shutdown
 alias shutdown="sudo shutdown -h now"
-
-# netscanner
-alias ns="sudo netscanner"
