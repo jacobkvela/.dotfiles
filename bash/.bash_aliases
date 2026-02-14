@@ -1,7 +1,10 @@
 # bash aliases
 
 # bat - a cat(1) clone with syntax highlighting and git intergration
-alias cat="batcat"
+alias bat="bat --color=always"
+
+# bat - a cat(1) clone with syntax highlighting and git intergration
+alias cat="bat --color=always"
 
 # cd popd
 alias ..="cd .."
@@ -23,6 +26,9 @@ alias gitpush="git push --set-upstream origin main"
 
 # prompt before move
 alias mv="mv -i"
+
+# ncmpcpp
+alias ncmpcpp="ncmpcpp 2>/dev/null"
 
 # prompt before removal
 alias rm="rm -i"

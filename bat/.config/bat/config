@@ -1,0 +1,3 @@
+--map-syntax "**/tmux/tmux.conf:bash"
+--map-syntax "tmux.conf:bash"
+--map-syntax "*.tmux.conf:bash"

@@ -1,0 +1,18 @@
+[user]
+	email = jacobkvela@icloud.com
+	name = jacobkvela
+
+[core]
+	editor = vim  # or code --wait, nano, nvim, etc.
+	autocrlf = input  # good for Unix/macOS; use true for Windows
+	excludesfile = ~/.gitignore_global
+
+[color]
+	ui = auto
+
+[push]
+	default = simple
+
+[alias]
+	log = log --oneline --graph --decorate --all
+	last = log -1 HEAD

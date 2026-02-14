@@ -1,18 +1,37 @@
-# git ignore file
+# Ignore generated/cache files
+*.swp
+*.swo
+*~
+.DS_Store
 
-# ignore dir plugged
-.vim/plugged
+# Ignore history files
+.bash_history
+.viminfo
+.python_history
 
-# ignore dir autoload
-#.vim/autoload
+# Tmux plugins (managed by TPM)
+tmux/.config/tmux/plugins/
+tmux/.tmux/plugins/
 
-# ignore nvim files
-.config/nvim/.*
-.config/nvim/L*
-.config/nvim/R*
-.config/nvim/d*
-.config/nvim/lazy*
-.config/nvim/lua/*
+# Fish generated files
+fish/.config/fish/fish_variables
+fish/.config/fish/fishd.*
 
-# ignore newsboat
-.newsboat/
+# MPD generated files
+mpd/.config/mpd/database
+mpd/.config/mpd/state
+mpd/.config/mpd/pid
+mpd/.config/mpd/sticker.sql
+mpd/.config/mpd/*.log
+
+# Vim plugins (managed by plugin manager)
+vim/.vim/plugged/
+vim/.vim/bundle/
+vim/.vim/pack/
+
+# Neovim plugins
+nvim/.config/nvim/plugin/
+nvim/.local/share/nvim/
+
+# GitHub CLI tokens (IMPORTANT!)
+gh/.config/gh/hosts.yml

@@ -1,0 +1,91 @@
+# ============================
+# MPD Connection
+# ============================
+mpd_host = "127.0.0.1"
+mpd_port = "6600"
+mpd_connection_timeout = "5"
+#mpd_music_dir = "/mnt/nfs/music"
+mpd_crossfade_time = "3"                   # Smooth transitions between songs
+
+# ============================
+# Directories
+# ============================
+ncmpcpp_directory = "~/.config/ncmpcpp"
+lyrics_directory = "~/.lyrics"
+
+# ============================
+# Visualizer (Fun!)
+# ============================
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_in_stereo = "yes"
+visualizer_type = "wave"               # Try: spectrum, wave, wave_filled, ellipse
+visualizer_look = "●▮"                     # Visual characters - experiment with: ●┃, ▮▮, ••, ││
+visualizer_color = "blue, cyan, green, yellow, magenta, red"
+visualizer_spectrum_smooth_look = "yes"
+
+# ============================
+# Display Modes
+# ============================
+browser_display_mode = "columns"
+playlist_display_mode = "columns"          # Changed to columns for better look
+search_engine_display_mode = "columns"
+
+# ============================
+# Progress Bar
+# ============================
+progressbar_look = "━━━"                   # Try: =>-, ─╼ , ━━╸, ▀▀▀, ■◣ 
+progressbar_color = "black"
+progressbar_elapsed_color = "cyan"
+
+# ============================
+# Colors & Appearance
+# ============================
+colors_enabled = "yes"
+main_window_color = "white"
+header_window_color = "cyan"
+volume_color = "green"
+statusbar_color = "white"
+statusbar_visibility = "yes"
+titles_visibility = "yes"
+enable_window_title = "yes"
+
+# ============================
+# Now Playing
+# ============================
+song_status_format = "$b{$8%a$9} $/b{$5%t$9} $8{$6(%b)$9}"
+song_list_format = "{$5%a$9} {$8%t$9}|{$8%f$9} $R {$6%b$9} {$3(%l)$9}"
+alternative_header_first_line_format = "$b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b"
+alternative_header_second_line_format = "{{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}"
+
+# ============================
+# Fun Extras
+# ============================
+display_bitrate = "yes"
+centered_cursor = "yes"
+cyclic_scrolling = "yes"
+mouse_support = "yes"
+mouse_list_scroll_whole_page = "no"
+lines_scrolled = "1"
+
+# ============================
+# Playlist
+# ============================
+playlist_show_remaining_time = "yes"
+playlist_shorten_total_times = "yes"
+playlist_separate_albums = "yes"
+
+# ============================
+# Behavior
+# ============================
+seek_time = "3"
+volume_change_step = "2"
+incremental_seeking = "yes"
+autocenter_mode = "yes"
+ignore_leading_the = "yes"
+allow_for_physical_item_deletion = "no"   # Safety first!
+
+# ============================
+# Execute on Song Change (Advanced Fun!)
+# ============================
+ execute_on_song_change = "notify-send 'Now Playing' '$(mpc current)'"
