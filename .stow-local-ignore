@@ -4,3 +4,5 @@
 ^/LICENSE.*
 ^/.*\.sh$
 ^/.*\.md$
+^/install.sh$
+^/README.md$
