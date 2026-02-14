@@ -165,7 +165,7 @@ alias reload='source ~/.bashrc'
 # FUN
 #==========================================================
 # Make terminal colorful
-#alias weather='curl wttr.in'
+alias weather='curl wttr.in'
 
 #==========================================================
 # SAFETY ALIASES (PREVENT COMMON MISTAKES)
