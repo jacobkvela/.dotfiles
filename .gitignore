@@ -35,5 +35,8 @@ nvim/.local/share/nvim/
 
 # GitHub CLI tokens (IMPORTANT!)
 gh/.config/gh/hosts.yml
-ncmpcpp/.config/ncmpcpp/error.log
+
+# wildcard for all error logs
 **/*error.log
+**/*.log
+*.log
