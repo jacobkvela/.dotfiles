@@ -26,8 +26,17 @@ print_info() { echo -e "${CYAN}ℹ $1${RESET}"; }
 #==========================================================
 # CONFIGURATION
 #==========================================================
+# Default to HTTPS (works for everyone)
 DOTFILES_REPO="https://github.com/jacobkvela/dotfiles.git"
 DOTFILES_DIR="$HOME/.dotfiles"
+
+# Check if SSH key is available and use SSH instead
+if ssh -T git@github.com 2>&1 | grep -q "successfully authenticated"; then
+    DOTFILES_REPO="git@github.com:jacobkvela/dotfiles.git"
+    print_info "Using SSH for git clone"
+else
+    print_info "Using HTTPS for git clone"
+fi
 
 #==========================================================
 # BANNER
@@ -129,11 +138,11 @@ for file in "${DOTFILES_TO_BACKUP[@]}"; do
             mkdir -p "$BACKUP_DIR"
             BACKED_UP=true
         fi
-        
+
         # Preserve directory structure
         target_dir="$BACKUP_DIR/$(dirname "${file#$HOME/}")"
         mkdir -p "$target_dir"
-        
+
         cp -r "$file" "$target_dir/"
         print_info "Backed up: $file"
     fi
@@ -190,7 +199,7 @@ case $REPLY in
                 SELECTED+=("$package")
             fi
         done
-        
+
         if [ ${#SELECTED[@]} -gt 0 ]; then
             print_info "Installing selected packages..."
             stow "${SELECTED[@]}"
