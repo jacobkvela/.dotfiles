@@ -13,7 +13,6 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 # Quick directory navigation
-alias ~='cd ~'
 alias -- -='cd -'  # Go to previous directory
 
 #==========================================================
@@ -65,21 +64,20 @@ alias egrep='egrep --color=auto'
 #==========================================================
 # MUSIC PLAYER
 #==========================================================
-alias ncmpcpp='ncmpcpp 2>/dev/null'
+#alias ncm='ncmpcpp 2>/dev/null'
 
 #==========================================================
-# SYSTEM MANAGEMENT (ARCH/PACMAN)
+# SYSTEM MANAGEMENT (UBUNTU)
 #==========================================================
-alias install='sudo pacman -S'
-alias search='pacman -Ss'
-alias uninstall='sudo pacman -Rns'
-alias update='sudo pacman -Syy'
-alias upgrade='sudo pacman -Syu'
-alias clean='sudo pacman -Sc'      # Clean package cache
-alias autoremove='sudo pacman -Rns $(pacman -Qdtq)'  # Remove orphans
+alias install='sudo apt install'
+alias search='apt search'
+alias uninstall='sudo apt remove'
+alias update='sudo apt update'
+alias upgrade='sudo apt upgrade'
+alias autoremove='sudo apt autoremove'  # Remove orphans
 
 # System info
-alias installed='pacman -Q | wc -l'  # Count installed packages
+alias installed='apt list --installed'  # Count installed packages
 
 #==========================================================
 # POWER MANAGEMENT
