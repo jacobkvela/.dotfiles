@@ -65,7 +65,7 @@ alias egrep='egrep --color=auto'
 #==========================================================
 # MUSIC PLAYER
 #==========================================================
-alias ncmpcpp='ncmpcpp 2>/dev/null'
+alias ncm='ncmpcpp 2>/dev/null'
 
 #==========================================================
 # SYSTEM MANAGEMENT (ARCH/PACMAN)
@@ -89,41 +89,10 @@ alias reboot='sudo reboot'
 alias suspend='systemctl suspend'
 
 #==========================================================
-# GIT SHORTCUTS
-#==========================================================
-#alias g='git'
-#alias ga='git add'
-#alias gaa='git add .'
-#alias gc='git commit -m'
-#alias gca='git commit -am'
-#alias gp='git push'
-#alias gpull='git pull'
-#alias gs='git status'
-#alias gd='git diff'
-#alias gl='git log --oneline --graph --decorate --all'
-#alias gco='git checkout'
-#alias gb='git branch'
-#alias gitpush='git push --set-upstream origin main'
-#
-## Git dotfiles management
-#alias dotfiles='cd ~/.dotfiles'
-#alias dotpush='cd ~/.dotfiles && git add . && git commit -m "Update dotfiles" && git push'
-#alias dotstatus='cd ~/.dotfiles && git status'
-
-#==========================================================
 # FZF UTILITIES
 #==========================================================
 alias fman='compgen -c | fzf | xargs man'  # Fuzzy search man pages
 alias fcd='cd $(find . -type d | fzf)'     # Fuzzy find directory and cd
-
-#==========================================================
-# TMUX
-#==========================================================
-#alias t='tmux'
-#alias ta='tmux attach -t'
-#alias tl='tmux list-sessions'
-#alias tn='tmux new -s'
-#alias tk='tmux kill-session -t'
 
 #==========================================================
 # DEVELOPMENT
@@ -145,13 +114,6 @@ alias ports='netstat -tulanp'     # Show open ports
 #==========================================================
 # MISC UTILITIES
 #==========================================================
-#alias c='clear'
-#alias h='history'
-#alias j='jobs -l'
-#alias path='echo -e ${PATH//:/\\n}'  # Print PATH, one per line
-#alias now='date +"%T"'
-#alias nowdate='date +"%Y-%m-%d"'
-
 # Quick edit important files
 alias aliases='vim ~/.bash_aliases && source ~/.bash_aliases'
 alias bashrc='vim ~/.bashrc && source ~/.bashrc'
@@ -160,12 +122,6 @@ alias tmuxconf='vim ~/.config/tmux/tmux.conf'
 
 # Reload bash config
 alias reload='source ~/.bashrc'
-
-#==========================================================
-# FUN
-#==========================================================
-# Make terminal colorful
-alias weather='curl wttr.in'
 
 #==========================================================
 # SAFETY ALIASES (PREVENT COMMON MISTAKES)
