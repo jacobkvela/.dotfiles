@@ -34,7 +34,7 @@ stow bash git tmux vim
 - **bash** - Shell with enhanced aliases and productivity shortcuts
 - **git** - Version control with GPG commit signing
 - **vim** - Text editor with plugins (vim-plug, FZF, NERDTree, Gruvbox)
-- **tmux** - Terminal multiplexer with Gruvbox theme and 14 popups
+- **tmux** - Terminal multiplexer with Gruvbox theme
 
 ### Utilities
 - **bat** - Syntax-highlighted file viewer
@@ -55,7 +55,6 @@ Consistent Gruvbox dark theme across:
 ### Productivity Enhancements
 - **FZF integration** - Fuzzy file finding in vim and bash
 - **Bat** - Better `cat` with syntax highlighting
-- **Smart aliases** - 50+ time-saving shortcuts
 - **Tmux popups** - Quick access to tools without leaving tmux
 
 ### Security Features
