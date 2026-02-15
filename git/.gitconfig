@@ -1,6 +1,7 @@
 [user]
 	email = jacobkvela@icloud.com
 	name = jacobkvela
+	signingkey = DBC12BA61019D7A5
 
 [core]
 	editor = vim  # or code --wait, nano, nvim, etc.
@@ -16,3 +17,9 @@
 [alias]
 	log = log --oneline --graph --decorate --all
 	last = log -1 HEAD
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg]
+	program = gpg

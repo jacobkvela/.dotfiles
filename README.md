@@ -107,13 +107,6 @@ fisher install IlanCosman/tide
 ..          # cd ..
 ...         # cd ../..
 
-# Git shortcuts
-gst         # git status
-ga          # git add
-gc          # git commit -m
-gp          # git push
-gl          # git log (pretty)
-
 # Dotfiles management
 dotfiles    # cd ~/.dotfiles
 dotpush     # Quick commit and push
@@ -124,10 +117,6 @@ install     # sudo pacman -S
 update      # sudo pacman -Syy
 upgrade     # sudo pacman -Syu
 
-# Tmux
-t           # tmux
-ta          # tmux attach -t
-tn          # tmux new -s
 ```
 
 ### Tmux Keybindings
