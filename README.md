@@ -1,176 +1,270 @@
 # Dotfiles
 
-My personal configuration files managed with GNU Stow.
+Personal configuration files managed with GNU Stow, featuring Gruvbox theming and cross-platform compatibility.
 
 ## Quick Start
 
 ### One-Line Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jacobkvela/dotfiles/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/jacobkvela/.dotfiles/main/install.sh | bash
 ```
 
 ### Manual Install
 
 ```bash
 # Clone the repository
-git clone https://github.com/jacobkvela/dotfiles.git ~/.dotfiles
+git clone git@github.com:jacobkvela/.dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
-# Install GNU Stow if needed
-sudo pacman -S stow  # Arch
-# sudo apt install stow  # Debian/Ubuntu
+# Install GNU Stow
+sudo pacman -S stow  # Arch Linux
+sudo apt install stow  # Ubuntu/Debian
 
 # Install all dotfiles
-stow *
+stow bash bat fish git htop mpd ncmpcpp tmux vim
 
-# Or install specific packages
+# Or selectively install
 stow bash git tmux vim
 ```
 
 ## What's Included
 
-### Core
-- **bash** - Shell configuration, aliases, and prompt
-- **git** - Git configuration and aliases
-- **vim** - Vim configuration with plugins
-
-### Terminal
-- **tmux** - Terminal multiplexer config (Ctrl+Space prefix)
-- **fish** - Fish shell configuration (optional)
+### Core Configuration
+- **bash** - Shell with enhanced aliases and productivity shortcuts
+- **git** - Version control with GPG commit signing
+- **vim** - Text editor with plugins (vim-plug, FZF, NERDTree, Gruvbox)
+- **tmux** - Terminal multiplexer with Gruvbox theme
 
 ### Utilities
-- **bat** - Better cat with syntax highlighting
-- **htop** - System monitor customization
+- **bat** - Syntax-highlighted file viewer
+- **htop** - System monitor configuration
 - **ncmpcpp** - Music player UI
+- **mpd** - Music Player Daemon
+- **mpv** - Video player
+- **fish** - Friendly interactive shell (optional)
 
-### Music
-- **mpd** - Music Player Daemon configuration
-- **mpv** - Video player settings
+## Features
 
-## Structure
+### Gruvbox Theme
+Consistent Gruvbox dark theme across:
+- Vim editor
+- Tmux status bar and panes
+- Terminal color scheme
+
+### Productivity Enhancements
+- **FZF integration** - Fuzzy file finding in vim and bash
+- **Bat** - Better `cat` with syntax highlighting
+- **Tmux popups** - Quick access to tools without leaving tmux
+
+### Security Features
+- Safe file operation aliases (prevent accidental deletions)
+
+## Repository Structure
 
 ```
 ~/.dotfiles/
 ├── bash/
-│   ├── .bashrc
-│   ├── .bash_profile
-│   └── .bash_aliases
+│   ├── .bashrc           # Shell configuration
+│   ├── .bash_profile     # Login shell
+│   └── .bash_aliases     # 50+ productivity aliases
 ├── git/
-│   └── .gitconfig
+│   └── .gitconfig        # Git config with GPG signing
 ├── tmux/
-│   └── .config/
-│       └── tmux/
-│           └── tmux.conf
+│   └── .config/tmux/
+│       └── tmux.conf     # Gruvbox theme + 14 popups
 ├── vim/
-│   └── .vimrc
-└── ... (other packages)
+│   └── .vimrc            # Vim config with plugins
+├── install.sh            # Automated installer
+└── README.md             # This file
 ```
 
-Each package directory mirrors the structure from your home directory.
+## Post-Installation
 
-## Post-Install
-
-### Install Vim Plugins
+### 1. Install Vim Plugins
 
 ```bash
-# Vim-plug will auto-install, then:
+# Vim-plug auto-installs, then run:
 vim +PlugInstall +qall
 ```
 
-### Install Tmux Plugins
+Included plugins:
+- **Gruvbox** - Color scheme
+- **FZF** - Fuzzy finder
+- **NERDTree** - File explorer
+- **Goyo + Limelight** - Distraction-free writing
+
+### 2. Install Tmux Plugin Manager (TPM)
 
 ```bash
-# Install TPM (Tmux Plugin Manager)
+# Install TPM
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 
-# In tmux, press: Ctrl+Space I (capital i)
-```
-
-### Install Fish Plugins (Optional)
-
-```bash
-# Install Fisher
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-
-# Install recommended plugins
-fisher install jethrokuan/z
-fisher install IlanCosman/tide
+# In tmux, press: Ctrl+Space I (capital I)
 ```
 
 ## Key Features
 
 ### Bash Aliases
 
+Navigate faster:
 ```bash
-# Navigation
 ..          # cd ..
 ...         # cd ../..
+-           # cd to previous directory
+```
 
-# Git shortcuts
-gst         # git status
-ga          # git add
-gc          # git commit -m
-gp          # git push
-gl          # git log (pretty)
+File operations:
+```bash
+ll          # ls -alF (detailed list)
+lt          # ls by modification time
+lsize       # ls by file size
+cat         # bat with syntax highlighting
+```
 
-# Dotfiles management
-dotfiles    # cd ~/.dotfiles
-dotpush     # Quick commit and push
-dotstatus   # git status in dotfiles
-
-# System (Arch)
+System management (Arch):
+```bash
 install     # sudo pacman -S
 update      # sudo pacman -Syy
 upgrade     # sudo pacman -Syu
+search      # pacman -Ss
+```
 
-# Tmux
-t           # tmux
-ta          # tmux attach -t
-tn          # tmux new -s
+Utilities:
+```bash
+serve       # Python HTTP server (port 8000)
+fman        # Fuzzy search man pages
+reload      # Reload bash config
+```
+
+Quick edits:
+```bash
+aliases     # Edit and reload aliases
+bashrc      # Edit and reload bashrc
+vimrc       # Edit vimrc
+tmuxconf    # Edit tmux.conf
 ```
 
 ### Tmux Keybindings
 
 **Prefix:** `Ctrl+Space`
 
+#### Window Management
 ```bash
-# Window management
 Ctrl+Space c        # New window
-Ctrl+Space n/p      # Next/Previous window
+Ctrl+Space n        # Next window
+Ctrl+Space p        # Previous window
 Ctrl+Space ,        # Rename window
+Ctrl+Space &        # Kill window
+```
 
-# Pane management
+#### Pane Management
+```bash
 Ctrl+Space \        # Split vertically
 Ctrl+Space -        # Split horizontally
-Ctrl+Space h/j/k/l  # Resize panes
+Ctrl+Space h/j/k/l  # Resize panes (vim-style)
 Ctrl+Space m        # Maximize/unmaximize pane
 Ctrl+Space arrows   # Navigate panes
+Ctrl+Space x        # Kill pane
+```
 
-# Special
-Ctrl+Space M        # ncmpcpp popup
-Ctrl+Space r        # Reload config
+#### Tmux Popups
+```bash
+Ctrl+Space M        # Music player (ncmpcpp)
+Ctrl+Space H        # System monitor (htop)
+Ctrl+Space G        # Git status
+Ctrl+Space L        # Git log
+Ctrl+Space F        # File finder (find + fzf + bat preview)
+Ctrl+Space S        # Search in files (ripgrep + fzf)
+Ctrl+Space N        # Quick notes (vim ~/scratch.md)
+Ctrl+Space C        # Calendar (3 months)
+Ctrl+Space =        # Calculator (Python)
+Ctrl+Space m        # Man pages (fuzzy search)
+Ctrl+Space P        # Process viewer (ps + fzf)
+Ctrl+Space ?        # Tmux keybindings help
+Ctrl+Space d        # Directory navigation
+Ctrl+Space /        # Package search
+```
+
+#### Copy Mode (Vim-style)
+```bash
+Ctrl+Space [        # Enter copy mode
+v                   # Start selection
+y                   # Yank (copy to clipboard)
+Ctrl+Space P        # Paste
+```
+
+#### Other
+```bash
+Ctrl+Space r        # Reload tmux config
+Ctrl+Space t        # Show clock
 ```
 
 ### Vim Keybindings
 
 **Leader:** `Space`
 
+#### File Navigation
 ```bash
-# File navigation
 Space f      # Find files (FZF)
 Space b      # Browse buffers
-Space g      # Search in files (ripgrep)
+Space g      # Search in files (Ripgrep)
+Space t      # Browse tags
 Space n      # Toggle NERDTree
+```
 
-# Utilities
+#### Editing
+```bash
 Space Space  # Clear search highlight
 Space w      # Quick save
 Space q      # Quick quit
-Space z      # Toggle Goyo (distraction-free)
+Space z      # Toggle Goyo (distraction-free mode)
+```
 
-# Split navigation
-Ctrl h/j/k/l # Navigate between splits
+#### Split Navigation
+```bash
+Ctrl h       # Move to left split
+Ctrl j       # Move to down split
+Ctrl k       # Move to up split
+Ctrl l       # Move to right split
+```
+
+#### Split Resizing
+```bash
+Space h      # Decrease width
+Space j      # Increase height
+Space k      # Decrease height
+Space l      # Increase width
+```
+
+## Multi-Machine Setup
+
+### Branch Strategy
+
+This repository supports multiple machines:
+
+- **`main` branch** - Primary configuration (Arch Linux)
+- **`ubuntu` branch** - Ubuntu/Debian specific tweaks
+
+### For Ubuntu/Debian Users
+
+The dotfiles work on Ubuntu but package management aliases use Arch commands. To use on Ubuntu:
+
+```bash
+# Clone and checkout ubuntu branch
+git clone git@github.com:jacobkvela/.dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+git checkout ubuntu
+stow bash bat fish git htop mpd ncmpcpp tmux vim
+```
+
+Or modify `.bash_aliases` to detect OS:
+```bash
+if command -v pacman &> /dev/null; then
+    alias install='sudo pacman -S'
+elif command -v apt &> /dev/null; then
+    alias install='sudo apt install'
+fi
 ```
 
 ## Updating Dotfiles
@@ -180,7 +274,7 @@ Ctrl h/j/k/l # Navigate between splits
 ```bash
 cd ~/.dotfiles
 git pull
-stow -R *  # Re-stow to apply changes
+stow -R bash git tmux vim  # Re-stow to update symlinks
 ```
 
 ### Push Your Changes
@@ -188,7 +282,7 @@ stow -R *  # Re-stow to apply changes
 ```bash
 cd ~/.dotfiles
 git add .
-git commit -m "Update configuration"
+git commit -S -m "Update configuration"  # -S for GPG signing
 git push
 ```
 
@@ -197,39 +291,34 @@ git push
 ### Essential
 - `git` - Version control
 - `stow` - Symlink manager
-
-### Recommended
 - `vim` - Text editor
 - `tmux` - Terminal multiplexer
-- `bat` - Better cat
+
+### Recommended
+- `bat` - Better cat (`batcat` on Ubuntu)
 - `fzf` - Fuzzy finder
 - `ripgrep` - Fast grep
-- `fish` - Friendly shell (optional)
+- `htop` - System monitor
+- `xclip` - Clipboard (X11) or `wl-copy` (Wayland)
 
-### Install on Arch
+### Optional
+- `ncmpcpp` + `mpd` - Music player
+- `mpv` - Video player
+- `fish` - Alternative shell
+- `dust` - Better du
+- `tree` - Directory tree viewer
 
+### Install All Dependencies
+
+**Arch Linux:**
 ```bash
-sudo pacman -S git stow vim tmux bat fzf ripgrep fish htop ncmpcpp mpd mpv
+sudo pacman -S git stow vim tmux bat fzf ripgrep htop xclip ncmpcpp mpd mpv fish dust tree
 ```
 
-### Install on Debian/Ubuntu
-
+**Ubuntu/Debian:**
 ```bash
-sudo apt install git stow vim tmux bat fzf ripgrep fish htop ncmpcpp mpd mpv
-```
-
-## Uninstalling
-
-```bash
-# Remove symlinks for specific package
-cd ~/.dotfiles
-stow -D bash
-
-# Remove all symlinks
-stow -D *
-
-# Delete dotfiles (optional)
-rm -rf ~/.dotfiles
+sudo apt install git stow vim tmux bat fzf ripgrep htop xclip ncmpcpp mpd mpv fish tree
+# Note: bat is 'batcat' on Ubuntu
 ```
 
 ## Troubleshooting
@@ -241,22 +330,42 @@ If stow complains about existing files:
 ```bash
 # Backup existing files
 mkdir ~/.dotfiles_backup
-mv ~/.bashrc ~/.dotfiles_backup/
+mv ~/.bashrc ~/.bash_aliases ~/.gitconfig ~/.dotfiles_backup/
 
 # Then stow
-stow bash
+cd ~/.dotfiles
+stow bash git tmux vim
 ```
 
-### Tmux Plugins Not Loading
+The install script automatically backs up conflicting files.
+
+### Tmux Colors Not Working
+
+Ensure your terminal supports 256 colors and true color:
 
 ```bash
-# Make sure TPM is installed
-ls ~/.config/tmux/plugins/tpm
+# Check TERM variable
+echo $TERM
 
-# In tmux, press: Ctrl+Space I
+# Should be: screen-256color (in tmux) or xterm-256color
+
+# Test true color
+curl -s https://raw.githubusercontent.com/JohnMorales/dotfiles/master/colors/24-bit-color.sh | bash
 ```
 
-### Vim Plugins Not Working
+### Bat Command Not Found (Ubuntu)
+
+On Ubuntu, `bat` is installed as `batcat`:
+
+```bash
+# Create symlink
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
+
+# Or use the alias (already in .bash_aliases)
+```
+
+### Vim Plugins Not Loading
 
 ```bash
 # Reinstall vim-plug
@@ -267,15 +376,41 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 vim +PlugInstall +qall
 ```
 
+## Uninstalling
+
+```bash
+# Remove symlinks
+cd ~/.dotfiles
+stow -D bash bat fish git htop mpd ncmpcpp tmux vim
+
+# Remove dotfiles directory (optional)
+rm -rf ~/.dotfiles
+
+# Restore backups if needed
+cp ~/.dotfiles_backup/* ~/
+```
+
+## Contributing
+
+This is a personal dotfiles repository, but feel free to fork and adapt for your own use!
+
 ## License
 
-MIT License - Feel free to use and modify as needed.
+MIT License - Use and modify as needed.
 
 ## Credits
 
 - [GNU Stow](https://www.gnu.org/software/stow/) - Symlink farm manager
+- [Gruvbox](https://github.com/morhetz/gruvbox) - Retro groove color scheme
+- [vim-plug](https://github.com/junegunn/vim-plug) - Minimalist vim plugin manager
+- [TPM](https://github.com/tmux-plugins/tpm) - Tmux plugin manager
 - Inspired by the dotfiles community
 
 ## Author
 
-jacobkvela - [GitHub](https://github.com/jacobkvela)
+**jacobkvela** - [GitHub](https://github.com/jacobkvela)
+
+---
+
+**Note:** These dotfiles are actively maintained and tested on Arch Linux. Ubuntu/Debian compatibility is provided via the `ubuntu` branch.
+

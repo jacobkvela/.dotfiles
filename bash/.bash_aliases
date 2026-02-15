@@ -87,41 +87,10 @@ alias reboot='sudo reboot'
 alias suspend='systemctl suspend'
 
 #==========================================================
-# GIT SHORTCUTS
-#==========================================================
-#alias g='git'
-#alias ga='git add'
-#alias gaa='git add .'
-#alias gc='git commit -m'
-#alias gca='git commit -am'
-#alias gp='git push'
-#alias gpull='git pull'
-#alias gs='git status'
-#alias gd='git diff'
-#alias gl='git log --oneline --graph --decorate --all'
-#alias gco='git checkout'
-#alias gb='git branch'
-#alias gitpush='git push --set-upstream origin main'
-#
-## Git dotfiles management
-#alias dotfiles='cd ~/.dotfiles'
-#alias dotpush='cd ~/.dotfiles && git add . && git commit -m "Update dotfiles" && git push'
-#alias dotstatus='cd ~/.dotfiles && git status'
-
-#==========================================================
 # FZF UTILITIES
 #==========================================================
 alias fman='compgen -c | fzf | xargs man'  # Fuzzy search man pages
 alias fcd='cd $(find . -type d | fzf)'     # Fuzzy find directory and cd
-
-#==========================================================
-# TMUX
-#==========================================================
-#alias t='tmux'
-#alias ta='tmux attach -t'
-#alias tl='tmux list-sessions'
-#alias tn='tmux new -s'
-#alias tk='tmux kill-session -t'
 
 #==========================================================
 # DEVELOPMENT
@@ -137,19 +106,10 @@ alias serve='python3 -m http.server 8000'
 # NETWORK
 #==========================================================
 alias ports='netstat -tulanp'     # Show open ports
-#alias myip='curl ifconfig.me'     # Get public IP
-#alias ping='ping -c 5'            # Limit to 5 pings
 
 #==========================================================
 # MISC UTILITIES
 #==========================================================
-#alias c='clear'
-#alias h='history'
-#alias j='jobs -l'
-#alias path='echo -e ${PATH//:/\\n}'  # Print PATH, one per line
-#alias now='date +"%T"'
-#alias nowdate='date +"%Y-%m-%d"'
-
 # Quick edit important files
 alias aliases='vim ~/.bash_aliases && source ~/.bash_aliases'
 alias bashrc='vim ~/.bashrc && source ~/.bashrc'
