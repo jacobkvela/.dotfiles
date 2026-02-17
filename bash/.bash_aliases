@@ -43,8 +43,7 @@ alias tree='tree -C'      # Colorize output
 #==========================================================
 # FILE VIEWERS
 #==========================================================
-alias bat='bat --color=always'
-alias cat='bat --color=always --paging=never'
+alias bat='batcat --color=always'
 alias less='bat --paging=always'
 
 #==========================================================
