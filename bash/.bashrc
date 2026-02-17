@@ -129,6 +129,9 @@ export MANPAGER="vim +MANPAGER --not-a-term -"
 
 . "$HOME/.cargo/env"
 
+## SSH agent with keychain ##
+eval $(keychain --eval --quiet ed25519-ubuntu-server-git)
+
 ## compression function ##
 
 compress() {

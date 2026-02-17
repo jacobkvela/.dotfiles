@@ -122,12 +122,12 @@ lsize       # ls by file size
 cat         # bat with syntax highlighting
 ```
 
-System management (Arch):
+System management (Ubuntu):
 ```bash
-install     # sudo pacman -S
-update      # sudo pacman -Syy
-upgrade     # sudo pacman -Syu
-search      # pacman -Ss
+install     # sudo apt install
+update      # sudo apt update
+upgrade     # sudo apt upgrade
+search      # apt search
 ```
 
 Utilities:
@@ -177,8 +177,6 @@ Ctrl+Space L        # Git log
 Ctrl+Space F        # File finder (find + fzf + bat preview)
 Ctrl+Space S        # Search in files (ripgrep + fzf)
 Ctrl+Space N        # Quick notes (vim ~/scratch.md)
-Ctrl+Space C        # Calendar (3 months)
-Ctrl+Space =        # Calculator (Python)
 Ctrl+Space m        # Man pages (fuzzy search)
 Ctrl+Space P        # Process viewer (ps + fzf)
 Ctrl+Space ?        # Tmux keybindings help
