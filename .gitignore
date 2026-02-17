@@ -33,8 +33,9 @@ vim/.vim/pack/
 nvim/.config/nvim/plugin/
 nvim/.local/share/nvim/
 
-# GitHub CLI tokens (IMPORTANT!)
+# GitHub CLI tokens & .gitconfig.local (IMPORTANT!)
 gh/.config/gh/hosts.yml
+git/.gitconfig.local
 
 # wildcard for all error logs
 **/*error.log

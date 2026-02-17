@@ -17,9 +17,23 @@
 [alias]
 	log = log --oneline --graph --decorate --all
 	last = log -1 HEAD
+
 [commit]
 	gpgsign = true
+
 [tag]
 	gpgsign = true
+
 [gpg]
-	program = gpg
+    program = gpg
+
+[sendemail]
+    smtpserver = smtp.mail.me.com
+    smtpuser = jacobkvela@icloud.com
+    smtpencryption = tls
+    smtpserverport = 587
+    chainreplyto = false
+    annotate = yes
+
+[include]
+    path = ~/.gitconfig.local    # for sensitive values
