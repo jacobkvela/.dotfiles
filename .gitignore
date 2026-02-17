@@ -23,6 +23,7 @@ mpd/.config/mpd/state
 mpd/.config/mpd/pid
 mpd/.config/mpd/sticker.sql
 mpd/.config/mpd/*.log
+mpd/.config/mpd/log
 
 # Vim plugins (managed by plugin manager)
 vim/.vim/plugged/
