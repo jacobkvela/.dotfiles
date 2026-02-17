@@ -1,18 +1,40 @@
 [user]
-	email = jacobkvela@icloud.com
-	name = jacobkvela
+        email = jacobkvela@icloud.com
+        name = jacobkvela
+        signingkey = DBC12BA61019D7A5
 
 [core]
-	editor = vim  # or code --wait, nano, nvim, etc.
-	autocrlf = input  # good for Unix/macOS; use true for Windows
-	excludesfile = ~/.gitignore_global
+        editor = vim  # or code --wait, nano, nvim, etc.
+        autocrlf = input  # good for Unix/macOS; use true for Windows
+        excludesfile = ~/.gitignore_global
 
 [color]
-	ui = auto
+        ui = auto
 
 [push]
-	default = simple
+        default = simple
 
 [alias]
-	log = log --oneline --graph --decorate --all
-	last = log -1 HEAD
+        log = log --oneline --graph --decorate --all
+            last = log -1 HEAD
+
+[commit]
+        gpgsign = true
+
+[tag]
+        gpgsign = true
+
+[gpg]
+        program = gpg
+
+[sendemail]
+        smtpserver = smtp.mail.me.com
+        smtpuser = jacobkvela@icloud.com
+        smtpencryption = tls
+        smtpserverport = 587
+        chainreplyto = false
+        annotate = yes
+
+[include]
+        path = ~/.gitconfig.local    # for sensitive values
+
